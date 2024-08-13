@@ -1,15 +1,14 @@
-﻿namespace Strategy.Strategies
-{
-    public class TicketmasterCheckout : ICheckoutStrategy
-    {
-        public Task<bool> CanConnect()
-        {
-            return default!;
-        }
+﻿namespace Strategy.Strategies;
 
-        public async Task<object> QueryOrCreateCustomer()
-        {
-            return default!;
-        }
+public class TicketmasterCheckout : ICheckoutStrategy
+{
+    public Task<bool> CanConnect()
+    {
+        return default!;
+    }
+
+    public Task<object> PayForOrderAsync()
+    {
+        return default!;
     }
 }

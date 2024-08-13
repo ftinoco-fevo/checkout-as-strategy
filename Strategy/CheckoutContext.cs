@@ -14,20 +14,14 @@ public class CheckoutContext
     public async Task<object> OrderTicketsAsync()
     {
         await _checkoutStrategy.CanConnect();
-
-        try
-        {
-            await _checkoutStrategy.QueryOrCreateCustomer();
-        }
-        catch (NotImplementedException)
-        {
-
-            Console.WriteLine("QueryOrCreateCustomer is not part of this checkout flow");
-        }
-
-        // other steps for order ticket
+         
+        // TODO: Execute specific logic 
         if (_checkoutStrategy is ITMHostCheckoutStrategy strategy)
             await strategy.AddBillingInfoAsync();
+
+        // TODO: Other steps for order ticket
+
+        await _checkoutStrategy.PayForOrderAsync();
 
         return default!;
     }

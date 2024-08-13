@@ -28,5 +28,6 @@ internal class TMHostCheckoutTests
         // Assert
         _mockCheckoutStrategy.Verify(strategy => strategy.CanConnect(), Times.Once);
         _mockCheckoutStrategy.Verify(strategy => strategy.AddBillingInfoAsync(), Times.Once);
+        _mockCheckoutStrategy.Verify(strategy => strategy.PayForOrderAsync(), Times.Once);
     } 
 }

@@ -2,5 +2,9 @@
 using Strategy;
 using Strategy.Strategies;
 
-CheckoutContext cartService = new(new TicketmasterCheckout()); 
-var result = await cartService.OrderTicketsAsync();
+CheckoutContext context = new(new TicketmasterCheckout()); 
+await context.OrderTicketsAsync();
+
+
+CheckoutContext context2 = new(new TMHostCheckout());
+await context2.OrderTicketsAsync(); 

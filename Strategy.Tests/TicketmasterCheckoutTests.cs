@@ -27,6 +27,6 @@ internal class TicketmasterCheckoutTests
 
         // Assert
         _mockCheckoutStrategy.Verify(strategy => strategy.CanConnect(), Times.Once);
-        _mockCheckoutStrategy.Verify(strategy => strategy.QueryOrCreateCustomer(), Times.Once);
+        _mockCheckoutStrategy.Verify(strategy => strategy.PayForOrderAsync(), Times.Once);
     } 
 }
